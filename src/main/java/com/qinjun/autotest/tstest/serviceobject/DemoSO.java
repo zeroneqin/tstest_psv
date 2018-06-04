@@ -1,14 +1,13 @@
-package com.qinjun.autotest.tstest.biz.serviceobject;
+package com.qinjun.autotest.tstest.serviceobject;
 
 
 import com.google.gson.Gson;
-import com.qinjun.autotest.tstest.biz.pojoobject.req.DemoReq;
-import com.qinjun.autotest.tstest.biz.pojoobject.res.DemoRes;
+import com.qinjun.autotest.tstest.pojoobject.req.DemoReq;
+import com.qinjun.autotest.tstest.pojoobject.res.DemoRes;
 import com.qinjun.autotest.tstest.util.HttpResponse;
 import com.qinjun.autotest.tstest.util.HttpUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.Assert;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,16 +15,14 @@ import java.util.Map;
 public class DemoSO {
     final private static Logger logger = LoggerFactory.getLogger(DemoSO.class);
 
-    public static final String demoUrl = "/posts/1";
-
-    public static HttpResponse sendRequest(String baseUrl, DemoReq demoReq) {
+    public static HttpResponse sendRequestInner(String baseUrl, DemoReq demoReq) {
         HttpResponse httpResponse = null;
-        String fullUrl = baseUrl + demoUrl;
+        String fullUrl = baseUrl;
 
         Map<String, String> queryParams = new HashMap<String, String>();
         String name = demoReq.getName();
         if (name != null) {
-            logger.info("Request name:" + name);
+            logger.info("Request param, name:" + name);
             queryParams.put("name", name);
         }
 
@@ -34,9 +31,9 @@ public class DemoSO {
         return httpResponse;
     }
 
-    public static DemoRes sendRequestWrapper(String baseUrl, DemoReq demoReq) {
+    public static DemoRes sendRequest(String baseUrl, DemoReq demoReq) {
         DemoRes demoRes = null;
-        HttpResponse httpResponse = sendRequest(baseUrl,demoReq);
+        HttpResponse httpResponse = sendRequestInner(baseUrl,demoReq);
         if (httpResponse!=null) {
             if (httpResponse.getStatus()!=200) {
                 logger.warn("http status code is not 200");

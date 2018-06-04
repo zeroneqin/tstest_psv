@@ -22,9 +22,9 @@ public class HttpUtil {
     private static final Logger logger = LoggerFactory.getLogger(HttpUtil.class);
 
     public static HttpResponse sendGet(String url, Map<String, String> headerMap, Map<String,String> queryParams, boolean encode) {
-        HttpResponse httpResponse = null;
+        HttpResponse httpResponse = new HttpResponse();
         CloseableHttpClient httpClient = HttpClients.createDefault();
-        String queryStr=null;
+        String queryStr="";
         if (queryParams!=null && queryParams.size()>0) {
             url=url+"?";
             boolean firstQueryParam = true;

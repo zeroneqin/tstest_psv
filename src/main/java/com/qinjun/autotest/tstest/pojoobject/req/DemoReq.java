@@ -1,4 +1,4 @@
-package com.qinjun.autotest.tstest.biz.pojoobject.req;
+package com.qinjun.autotest.tstest.pojoobject.req;
 
 public class DemoReq {
     String name;

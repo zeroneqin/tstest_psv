@@ -1,4 +1,4 @@
-package com.qinjun.autotest.tstest.biz.pojoobject.res;
+package com.qinjun.autotest.tstest.pojoobject.res;
 
 public class DemoRes {
     Integer userId;
