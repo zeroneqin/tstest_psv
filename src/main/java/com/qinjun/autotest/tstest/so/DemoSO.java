@@ -1,9 +1,9 @@
-package com.qinjun.autotest.tstest.serviceobject;
+package com.qinjun.autotest.tstest.so;
 
 
 import com.google.gson.Gson;
-import com.qinjun.autotest.tstest.pojoobject.req.DemoReq;
-import com.qinjun.autotest.tstest.pojoobject.res.DemoRes;
+import com.qinjun.autotest.tstest.po.req.DemoReq;
+import com.qinjun.autotest.tstest.po.res.DemoRes;
 import com.qinjun.autotest.tstest.util.HttpResponse;
 import com.qinjun.autotest.tstest.util.HttpUtil;
 import org.slf4j.Logger;

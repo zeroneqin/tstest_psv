@@ -1,6 +1,6 @@
-package com.qinjun.autotest.tstest.verifyobject;
+package com.qinjun.autotest.tstest.vo;
 
-import com.qinjun.autotest.tstest.pojoobject.res.DemoRes;
+import com.qinjun.autotest.tstest.po.res.DemoRes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
