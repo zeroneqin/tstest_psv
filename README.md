@@ -8,11 +8,11 @@ TSTest-PSV Pattern(Test Service-Test-PSVPattern) is a test framework based on PO
 - VO, verify object in the verify layer, define the verification of your test
 
 A example case like below,
-···
+```
   ReqPO reqPO = new ReqPO();
   ResPO resPO = SO.sendRequest(reqPO);
   VO.verify(resPO)
-···
+```
 ## Author
 Jun Qin
 ## Bug and issues
